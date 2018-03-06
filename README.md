@@ -10,4 +10,4 @@ When running the GUI, make sure **the current path is where the `.mlapp` file li
 
 Here is an image of this GUI.
 
-![FDTD_GUI](D:\EE618\proj_1\FDTD_GUI.png)
+![FDTD_GUI](FDTD_GUI.png)
