@@ -42,6 +42,7 @@ xx = pp.dimensionX;
 yy = pp.dimensionY;
 % https://www.mathworks.com/help/matlab/ref/imagesc.html#input_argument_d119e479664
 imagesc(plot_h, mat.');
+% colorbar(plot_h);
 
 xx = pp.sourceLocationX;
 yy = pp.sourceLocationY;

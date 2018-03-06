@@ -5,7 +5,7 @@
 %  Created by Yifan Wang on 2/22/18.
 %
 
-function GUI_plotMovie(pp, plot_h, EzPlot_h)
+function Ez_time = GUI_plotMovie(pp, plot_h, EzPlot_h)
 
 xx = pp.dimensionX;
 yy = pp.dimensionY;
@@ -13,12 +13,14 @@ yy = pp.dimensionY;
 x0 = pp.targetPointX;
 y0 = pp.targetPointY;
 
-filename = 'output.bin';
+filename = ['sub' filesep 'output.bin'];
 fileID = fopen(filename, 'rb');
 
 dim_x = fread(fileID, 1, 'int32');
 dim_y = fread(fileID, 1, 'int32');
 time_step = fread(fileID, 1, 'int32');
+
+dim_x,dim_y,time_step
 
 mat0 = fread(fileID, [dim_x*dim_y time_step], 'double');
 fclose(fileID);
