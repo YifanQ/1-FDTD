@@ -31,12 +31,12 @@ end
 target_x = pp.targetPointX;
 target_y = pp.targetPointY;
 
-dx = 1e-6; dy = dx;
+dx = pp.dx; dy = dx;
 dt = dx/(sqrt(2)*c0); % (c0*dt)/dx < 1/sqrt(2), Courant, Courant-Friedrichs-Lewy_condition
 Ez_pos_x = ([1, dim_x] - source_x)*dx;
 Ez_pos_y = ([1, dim_y] - source_y)*dy;
 
-lambda = 10*dx;
+lambda = pp.lambda*dx;
 freq = c0/lambda;
 period_dt = lambda/(c0*dt);
 

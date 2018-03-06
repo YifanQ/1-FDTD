@@ -7,3 +7,7 @@ It can output the `config.bin`. Currently the button `FDTD start` is just: read 
 To run the GUI, you can type `appdesigner` in MATLAB command line. Then open `GUI_2D_FDTD.mlapp` in the pop-up App Designer. 
 
 When running the GUI, make sure **the current path is where the `.mlapp` file lives**.
+
+Here is an image of this GUI.
+
+![FDTD_GUI](D:\EE618\proj_1\FDTD_GUI.png)
