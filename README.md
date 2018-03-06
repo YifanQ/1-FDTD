@@ -1,6 +1,6 @@
 # Project 1, 2D-FDTD, TMz mode
 
-The GUI is created by App Designer in MATLAB 2017a. 
+This GUI is created by App Designer in MATLAB 2017a. 
 
 It can output the `config.bin`. Currently the button `FDTD start` is just: read `output.bin` and display it. 
 

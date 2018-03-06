@@ -1,3 +1,10 @@
+%
+%  GUI_plotMovie.m
+%  FDTD 2D TMz simulation
+%
+%  Created by Yifan Wang on 2/22/18.
+%
+
 function GUI_plotMovie(pp, plot_h, EzPlot_h)
 
 xx = pp.dimensionX;
@@ -24,10 +31,10 @@ caxis(plot_h, [-maxEz, +maxEz]);
 
 for i=1:time_step
 
-    mat = reshape(mat0(:, i), [dim_x, dim_y]);  
-    
+    mat = reshape(mat0(:, i), [dim_x, dim_y]);
+
     imagesc(plot_h, mat);
-    
+
     colorbar(plot_h);
     axis(plot_h, 'image');
     plot_h.Title.String = sprintf('FDTD grid layout @ time = %d dt', i);
