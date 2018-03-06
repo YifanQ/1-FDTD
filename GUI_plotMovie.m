@@ -10,8 +10,8 @@ function GUI_plotMovie(pp, plot_h, EzPlot_h)
 xx = pp.dimensionX;
 yy = pp.dimensionY;
 
-x0 = pp.targetPointY;
-y0 = pp.targetPointX;
+x0 = pp.targetPointX;
+y0 = pp.targetPointY;
 
 filename = 'output.bin';
 fileID = fopen(filename, 'rb');
@@ -21,11 +21,14 @@ dim_y = fread(fileID, 1, 'int32');
 time_step = fread(fileID, 1, 'int32');
 
 mat0 = fread(fileID, [dim_x*dim_y time_step], 'double');
+fclose(fileID);
 
 maxEz = max(mat0(:));
 
 line_h = animatedline(EzPlot_h, 'Marker','.');
+
 Ez_time = zeros(1,time_step);
+
 EzPlot_h.YLim = [-maxEz, +maxEz];
 caxis(plot_h, [-maxEz, +maxEz]);
 
@@ -33,7 +36,7 @@ for i=1:time_step
 
     mat = reshape(mat0(:, i), [dim_x, dim_y]);
 
-    imagesc(plot_h, mat);
+    imagesc(plot_h, mat.');
 
     colorbar(plot_h);
     axis(plot_h, 'image');
@@ -44,10 +47,9 @@ for i=1:time_step
 
     Ez_time(i) = mat(x0, y0);
     addpoints(line_h,i,Ez_time(i));
-
 end
 
-fclose(fileID)
+
 
 
 %{
